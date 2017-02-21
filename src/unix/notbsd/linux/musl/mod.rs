@@ -297,3 +297,10 @@ cfg_if! {
         pub use self::b32::*;
     } else { }
 }
+
+cfg_if! {
+    if #[cfg(target_os = "fuchsia")] {
+        mod fuchsia;
+        pub use self::fuchsia::*;
+    } else { }
+}
